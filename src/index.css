@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans+SC:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'IBM Plex Sans SC', system-ui, sans-serif;
+  line-height: 1.55;
+  font-weight: 400;
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: #081822;
+  color: #E7EEF3;
+}
+
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+.card {
+  @apply rounded-2xl border border-white/10 bg-steel-800/60 backdrop-blur px-5 py-4;
+}
+.section-title {
+  @apply text-sm font-mono tracking-wider uppercase text-tech-light/80;
+}
+.badge {
+  @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-mono border border-white/10;
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1B4560; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #245A7B; }
+
+@keyframes pulseDot { 0%,100%{opacity:0.4}50%{opacity:1} }
+.pulse-dot { animation: pulseDot 1.6s ease-in-out infinite; }
+
+@keyframes slideUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.slide-up { animation: slideUp .35s ease-out both; }
